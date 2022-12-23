@@ -1,7 +1,10 @@
 <?php
 
-class Article {
+class Article implements JsonSerializable{
 
+    public function jsonSerialize():mixed{
+        return get_object_vars($this);
+    }
     private int $id;
     private string $title;
     private string $content;

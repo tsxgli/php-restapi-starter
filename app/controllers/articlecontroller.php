@@ -16,7 +16,8 @@ class ArticleController extends Controller {
       
         // retrieve data 
         $articles = $this->articleService->getAll();
-    
+        header("Access-Control-Allow-Origin: null");   
+             
         // show view, param = accessible as $model in the view
         // displayView maps this to /views/article/index.php automatically
         $this->displayView($articles);
